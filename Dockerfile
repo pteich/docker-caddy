@@ -20,10 +20,13 @@ RUN set -x \
     && mv caddy /bin/caddy \
     && rm -rf /tmp/*
 
-COPY html /var/www/html
+COPY html /srv
+COPY Caddyfile /config
 
 ENTRYPOINT ["/usr/local/bin/dumb-init","/bin/caddy"]
 
+VOLUME ["/config", "/srv", "/logs"]
+
 EXPOSE 80 443 2015
-WORKDIR /var/www/html
-CMD ["-agree"]
+WORKDIR /srv
+CMD ["-agree", "-conf=/config/Caddyfile"]
