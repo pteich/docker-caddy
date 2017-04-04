@@ -28,5 +28,5 @@ COPY Caddyfile /config
 ENTRYPOINT ["/usr/local/bin/dumb-init","/bin/caddy"]
 
 EXPOSE 80 443 2015
-WORKDIR /html
+WORKDIR /srv
 CMD ["-agree", "-conf=/config/Caddyfile"]
