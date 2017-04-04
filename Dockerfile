@@ -22,8 +22,8 @@ RUN set -x \
 
 COPY html /var/www/html
 
-ENTRYPOINT ["/usr/local/bin/dumb-init"]
+ENTRYPOINT ["/usr/local/bin/dumb-init","/bin/caddy"]
 
 EXPOSE 80 443 2015
 WORKDIR /var/www/html
-CMD ["/bin/caddy"]
+CMD ["-agree"]
