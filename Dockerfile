@@ -20,7 +20,7 @@ RUN set -x \
     && mv caddy /bin/caddy \
     && rm -rf /tmp/*
 
-VOLUME ["/config", "/srv", "/logs/caddy"]
+VOLUME ["/logs/caddy"]
 
 COPY html /srv
 COPY Caddyfile /config
