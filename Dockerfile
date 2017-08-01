@@ -2,7 +2,7 @@ FROM alpine:3.5
 MAINTAINER Peter Teich <peter.teich@gmail.com>
 
 ENV DUMBINIT_VERSION 1.2.0
-ENV CADDY_VERSION 0.10.4
+ENV CADDY_VERSION 0.10.6
 ENV CADDYPATH /.caddy
 
 RUN set -x \
